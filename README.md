@@ -37,6 +37,7 @@ In this project, I used props-drilling for state management due to the specific 
 To run this project locally, follow these steps:
 
 1. Clone the repository:
+   git clone - https://github.com/NikolozGel/test-project-book-store.git
 
 ````bash
 GITHUB EXAMPLE

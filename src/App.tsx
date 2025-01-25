@@ -13,6 +13,7 @@ import BookAddedAlert from "./components/alerts/BookAddedAlert";
 function App() {
   // ეს სტეიტი არის წიგნების მონაცემების შენახვისთვის
   const [bookData, setBookData] = useState<TBooks>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   // ეს სტეიტი გამოიყენება Conditional-render-თვის თუ სწრაფი ფილტრის შედეგები არ არის
   const [noResults, setNoResults] = useState<boolean>(() => {
     const storedResults = localStorage.getItem("noResults");
@@ -20,6 +21,23 @@ function App() {
   });
   // ეს სტეიტი გამოიყენება კალათაში არსებული რაოდენობის ინპუტის შეცვლისთვის
   const [quantity, setQuantity] = useState<number | string>("");
+
+  // ეს სტეიტი გამოვიყენე ფასის ფილტრის შეცვლისთვის და აქ იმიტომ გავაკეთე რომ
+  // პროპსად გადავცე header-ს, რომ logo-ზე დაკლიკებისას დაუბრუნდეს საწყის Value-ს
+  const [minValue, setMinValue] = useState(() => {
+    const minVal = localStorage.getItem("minValue");
+    return minVal ? parseInt(minVal) : 0;
+  });
+  const [maxValue, setMaxValue] = useState(() => {
+    const maxVal = localStorage.getItem("maxValue");
+    return maxVal ? parseInt(maxVal) : 200;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("minValue", minValue.toString());
+    localStorage.setItem("maxValue", maxValue.toString());
+  }, [minValue, maxValue]);
+
   // ეს სტეიტი არის Error Handling-თვის თუ რაიმე შეცდომა მოხდება რექუესთის დროს
   const [error, setError] = useState<string>("");
   // ეს სტეიტი გამოიყენება წარმატებით დასრულებული ქმედებისთვის შეტყობინების გამოსაჩენად
@@ -43,6 +61,7 @@ function App() {
 
   useEffect(() => {
     const fetchBooks = async () => {
+      setIsLoading(true);
       try {
         const response = await axios.get("http://localhost:3000/books");
         if (response.status === 200) {
@@ -52,6 +71,8 @@ function App() {
         }
       } catch (error) {
         if (error instanceof Error) setError(error.message);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -130,7 +151,7 @@ function App() {
         throw new Error("Error deleting the book");
       }
     } catch (error) {
-      console.log(error);
+      if (error instanceof Error) setError(error.message);
     }
   };
   // წიგნის წაშლის ლოგიკა კალათიდან
@@ -156,10 +177,15 @@ function App() {
                 filteredBooks={filteredBooks}
                 setFilteredBooks={setFilteredBooks}
                 bookData={bookData}
-                basketCount={getTotalQuantity()}
+                getTotalQuantity={getTotalQuantity()}
                 error={error}
                 setNoResults={setNoResults}
                 noResults={noResults}
+                minValue={minValue}
+                setMinValue={setMinValue}
+                maxValue={maxValue}
+                setMaxValue={setMaxValue}
+                isLoading={isLoading}
               />
             }
           >
@@ -184,12 +210,11 @@ function App() {
               path="/book/:bookId"
               element={
                 <ProductDetailPage
-                  addToBasket={addToBasket}
-                  handleQuantityChange={handleQuantityChange}
-                  basket={basket}
                   bookData={bookData}
+                  basket={basket}
+                  handleQuantityChange={handleQuantityChange}
                   setQuantity={setQuantity}
-                  handleDelete={handleDelete}
+                  addToBasket={addToBasket}
                 />
               }
             />
@@ -198,6 +223,7 @@ function App() {
               path="/edit-product/:editBookId"
               element={
                 <EditProductPage
+                  setBookData={setBookData}
                   setAlert={setAlert}
                   bookData={bookData}
                   setFilteredBooks={setFilteredBooks}
@@ -209,20 +235,19 @@ function App() {
               element={
                 <AddNewBook
                   bookData={bookData}
-                  setAlert={setAlert}
                   setBookData={setBookData}
+                  setAlert={setAlert}
                 />
               }
             />
             <Route
-              path="/basket"
+              path="/product/basket"
               element={
                 <BasketPage
-                  handleQuantityChange={handleQuantityChange}
-                  setQuantity={setQuantity}
                   basket={basket}
                   removeFromBasket={removeFromBasket}
-                  addToBasket={addToBasket}
+                  handleQuantityChange={handleQuantityChange}
+                  setQuantity={setQuantity}
                 />
               }
             />

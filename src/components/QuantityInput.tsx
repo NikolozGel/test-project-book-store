@@ -1,13 +1,13 @@
 interface QuantityInputProps {
   handleQuantityChange: (bookId: number) => void;
-  setItems: React.Dispatch<React.SetStateAction<number | string>>;
+  setQuantity: React.Dispatch<React.SetStateAction<number | string>>;
   book: IBook;
 }
 
 const QuantityInput = ({
   book,
   handleQuantityChange,
-  setItems,
+  setQuantity,
 }: QuantityInputProps) => {
   return (
     <form
@@ -21,7 +21,7 @@ const QuantityInput = ({
         max={10}
         defaultValue={book.quantity}
         min={1}
-        onChange={(e) => setItems(e.target.value)}
+        onChange={(e) => setQuantity(e.target.value)}
         className="p-2 w-16  rounded mr-5  border-[#2699fb] border-[1px]"
       />
       <button

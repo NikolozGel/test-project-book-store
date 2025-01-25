@@ -3,12 +3,12 @@ import BasketIcon from "./BasketIcon";
 import { useNavigate } from "react-router-dom";
 
 const FilterOptions = ({
-  basketCount,
+  getTotalQuantity,
   bookData,
   setFilteredBooks,
   setCurrentPage,
 }: {
-  basketCount: number;
+  getTotalQuantity: number;
   bookData: TBooks;
   setFilteredBooks: React.Dispatch<React.SetStateAction<TBooks>>;
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
@@ -140,7 +140,7 @@ const FilterOptions = ({
             {/* BasketIcon გამოჩნდება მხოლოდ sticky მდგომარეობაში */}
             {isSticky && (
               <div className="flex items-center">
-                <BasketIcon basketCount={basketCount} />
+                <BasketIcon getTotalQuantity={getTotalQuantity} />
               </div>
             )}
           </ul>

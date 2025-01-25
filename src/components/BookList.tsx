@@ -21,9 +21,9 @@ export function BookList({ addToBasket, handleDelete }: BookListProps) {
         </h1>
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {currentBooks.map((book, key) => {
+          {currentBooks.map((book) => {
             return (
-              <div key={key} className="relative  group">
+              <div key={book.id} className="relative  group">
                 <img
                   src={book.image}
                   alt="bookImg"
@@ -61,7 +61,6 @@ export function BookList({ addToBasket, handleDelete }: BookListProps) {
                       className="mt-4 px-5 py-2 hover:bg-[#2699fb] text-blue-600 border border-[#2699fb] hover:text-white rounded-lg bg-white focus:outline-none transition duration-200 flex items-center"
                       onClick={() => {
                         handleDelete(book.id);
-                        navigate("/");
                       }}
                     >
                       Delete the Book

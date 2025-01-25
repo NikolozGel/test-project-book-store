@@ -3,17 +3,19 @@ import { useState, useEffect } from "react";
 import { useNavigate, useOutletContext, useParams } from "react-router-dom";
 
 export default function EditProductPage({
-  bookData,
+  setBookData,
   setAlert,
+  bookData,
   setFilteredBooks,
 }: {
-  bookData: IBook[];
+  setBookData: React.Dispatch<React.SetStateAction<TBooks>>;
   setAlert: React.Dispatch<
     React.SetStateAction<{
       visible: boolean;
       message: string;
     }>
   >;
+  bookData: IBook[]; // აქ გადაეცემა წიგნების მასივი
   setFilteredBooks: React.Dispatch<React.SetStateAction<TBooks>>;
 }) {
   const { setCurrentPage } = useOutletContext<{
@@ -23,10 +25,10 @@ export default function EditProductPage({
   const { editBookId } = useParams();
   const book = bookData?.find((book) => String(book.id) === editBookId);
   const navigate = useNavigate();
-  // Initialize `editBook` with the book data if it exists
+  // ეს სტეიტი გამოიყენება წიგნის შეცვლისთვის
   const [editBook, setEditBook] = useState<IBook | null>(book || null);
 
-  // Sync the `editBook` state with `book` when `book` changes
+  // ეს ფუნქცია გამოიძახება როცა წიგნის შეცვლა მოხდება
   useEffect(() => {
     if (book) {
       setEditBook(book);
@@ -53,6 +55,7 @@ export default function EditProductPage({
           book.id === editBook.id ? { ...book, ...editBook } : book
         );
         setFilteredBooks(updatedBooks);
+        setBookData(updatedBooks);
         setCurrentPage(1);
         navigate("/");
         setAlert({ visible: true, message: "Book Edited successfully!" });

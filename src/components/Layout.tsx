@@ -10,17 +10,27 @@ export default function Layout({
   filteredBooks,
   setFilteredBooks,
   bookData,
-  basketCount,
+  getTotalQuantity,
   setNoResults,
   noResults,
+  minValue,
+  setMinValue,
+  maxValue,
+  setMaxValue,
+  isLoading,
 }: {
   filteredBooks: TBooks;
   setFilteredBooks: React.Dispatch<React.SetStateAction<TBooks>>;
   bookData: TBooks;
-  basketCount: number;
+  getTotalQuantity: number;
   error: string;
   setNoResults: React.Dispatch<React.SetStateAction<boolean>>;
   noResults: boolean;
+  minValue: number;
+  setMinValue: React.Dispatch<React.SetStateAction<number>>;
+  maxValue: number;
+  setMaxValue: React.Dispatch<React.SetStateAction<number>>;
+  isLoading: boolean;
 }) {
   // ფეიჯინგის ლოგიკა, საწყისი გვერდის განლაგება
   const [currentPage, setCurrentPage] = useState<number>(() => {
@@ -47,15 +57,21 @@ export default function Layout({
         setCurrentPage={setCurrentPage}
         bookData={bookData}
         setFilteredBooks={setFilteredBooks}
-        basketCount={basketCount}
+        getTotalQuantity={getTotalQuantity}
         setNoResults={setNoResults}
+        setMinValue={setMinValue}
+        setMaxValue={setMaxValue}
       />
       <PriceRangeSlider
         bookData={bookData}
         setFilteredBooks={setFilteredBooks}
+        minValue={minValue}
+        setMinValue={setMinValue}
+        maxValue={maxValue}
+        setMaxValue={setMaxValue}
       />
       <FilterOptions
-        basketCount={basketCount}
+        getTotalQuantity={getTotalQuantity}
         bookData={bookData}
         setFilteredBooks={setFilteredBooks}
         setCurrentPage={setCurrentPage}
@@ -83,6 +99,7 @@ export default function Layout({
         setCurrentPage={setCurrentPage}
         totalPages={totalPages}
         noResults={noResults}
+        isLoading={isLoading}
       />
 
       <footer>

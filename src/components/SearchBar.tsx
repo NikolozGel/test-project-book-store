@@ -48,8 +48,9 @@ const SearchBar = ({
   };
 
   return (
-    <form className="flex" onSubmit={handleSubmit}>
+    <form className="flex" onSubmit={handleSubmit} id="searchForm">
       <input
+        name="searchText"
         type="text"
         value={filterValue}
         className="w-full md:w-[406px] px-5 rounded-l-md border-[1px] border-gray-150 text-gray-400 focus:border-[#2699fb] outline-none"

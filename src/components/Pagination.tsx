@@ -8,6 +8,7 @@ interface PaginationProps {
   totalPages: number;
   booksToPaginate: TBooks;
   noResults: boolean;
+  isLoading: boolean;
 }
 
 export default function Pagination({
@@ -17,19 +18,22 @@ export default function Pagination({
   totalPages,
   booksToPaginate,
   noResults,
+  isLoading,
 }: PaginationProps) {
   const visiblePages = 5;
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    if (currentBooks.length === 0 && currentPage > 1) {
+    if (!isLoading && currentBooks.length === 0 && currentPage > 1) {
       setCurrentPage(currentPage - 1);
       navigate(`/page/${currentPage - 1}`);
     }
-  }, [currentBooks, currentPage, setCurrentPage, navigate]);
+  }, [currentBooks, currentPage, setCurrentPage, navigate, isLoading]);
 
   const pages = (() => {
+    if (currentPage <= 0 || visiblePages <= 0 || totalPages <= 0) return [];
+
     let startPage = Math.max(currentPage - Math.floor(visiblePages / 2), 1);
     let endPage = startPage + visiblePages - 1;
     if (endPage > totalPages) {
@@ -42,6 +46,7 @@ export default function Pagination({
       (_, index) => startPage + index
     );
   })();
+
   const handlePageChange = (pageNumber: number) => {
     if (pageNumber === currentPage) return;
     setCurrentPage(pageNumber);
@@ -64,6 +69,7 @@ export default function Pagination({
         location.pathname.includes("/book") ||
         location.pathname.includes("/edit-product") ||
         noResults === true ||
+        currentBooks.length < 15 ||
         location.pathname.includes("/addNewBook") ||
         booksToPaginate.length === 0
           ? "hidden"

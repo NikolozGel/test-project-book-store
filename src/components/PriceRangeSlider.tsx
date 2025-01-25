@@ -1,29 +1,21 @@
-import React, { useEffect, useState } from "react";
 import "./PriceRangeSliderStyles.css";
 import { useNavigate } from "react-router-dom";
 
 const PriceRangeSlider = ({
   bookData,
   setFilteredBooks,
+  minValue,
+  setMinValue,
+  maxValue,
+  setMaxValue,
 }: {
   bookData: TBooks;
   setFilteredBooks: React.Dispatch<React.SetStateAction<TBooks>>;
+  minValue: number;
+  setMinValue: React.Dispatch<React.SetStateAction<number>>;
+  maxValue: number;
+  setMaxValue: React.Dispatch<React.SetStateAction<number>>;
 }) => {
-  // სტეითის შექმნა და ინიციალიზაცია მინიმალური და მაქსიმალრი მნიშვნელობა
-  const [minValue, setMinValue] = useState(() => {
-    const minVal = localStorage.getItem("minValue");
-    return minVal ? parseInt(minVal) : 0;
-  });
-  const [maxValue, setMaxValue] = useState(() => {
-    const maxVal = localStorage.getItem("maxValue");
-    return maxVal ? parseInt(maxVal) : 200;
-  });
-
-  useEffect(() => {
-    localStorage.setItem("minValue", minValue.toString());
-    localStorage.setItem("maxValue", maxValue.toString());
-  }, [minValue, maxValue]);
-
   const navigate = useNavigate();
 
   const handleMinInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -70,6 +62,7 @@ const PriceRangeSlider = ({
             <span>From</span>
             <input
               type="number"
+              id="priceForm"
               className="input-min border border-gray-400"
               value={minValue}
               onChange={handleMinInputChange}
@@ -79,6 +72,7 @@ const PriceRangeSlider = ({
           <div className="field">
             <span>To</span>
             <input
+              id="priceTo"
               type="number"
               className="input-max border border-gray-400"
               value={maxValue}
@@ -90,6 +84,7 @@ const PriceRangeSlider = ({
         <div className="range-input">
           <input
             type="range"
+            id="rangeMin"
             className="range-min"
             min={0}
             max={200}
@@ -99,6 +94,7 @@ const PriceRangeSlider = ({
           />
           <input
             type="range"
+            id="rangeMax"
             className="range-max"
             min={0}
             max={200}

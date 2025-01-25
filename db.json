@@ -6,7 +6,7 @@
       "description": "A touching exploration of the joys and challenges of fatherhood.",
       "author": "Karl Ove Knausgaard",
       "category": "Fiction , Mini Vintages , Summer Reads , Mini Vintages",
-      "price": 25.99,
+      "price": "33",
       "image": "../src/assets/book-1.jpg",
       "quantity": 0
     },
@@ -16,7 +16,7 @@
       "description": "A deep dive into the impact of money on our lives and society.",
       "author": "Yuval Noah Harari",
       "category": " Fiction , Mini Vintages",
-      "price": 45.99,
+      "price": "12",
       "image": "../src/assets/book-2.jpg",
       "quantity": 0
     },
@@ -26,7 +26,7 @@
       "description": "An insightful look at the complexities and beauty of motherhood.",
       "author": "Helen Simpson",
       "category": "Fiction , Mini Vintages , Summer Reads , Mini Vintages , Read On The Road",
-      "price": 30.99,
+      "price": "11",
       "image": "../src/assets/book-3.jpg",
       "quantity": 0
     },
@@ -275,7 +275,7 @@
       "name": "Vintage Minis: Austerity",
       "description": "A sharp critique of global financial systems and their societal impacts.",
       "author": "Yanis Varoufakis",
-      "category": "Fiction , Thriller , Romance , Crime & Detective , Modern & contemporary fiction , Empowering women around the world",
+      "category": "Fiction , Thriller , Romance , Crime & Detective , Modern & contemporary fiction",
       "price": 36.55,
       "image": "../src/assets/book-28.jpg",
       "quantity": 0
@@ -372,7 +372,7 @@
     },
     {
       "id": "38",
-      "name": "Harry Potter and the Cursed Child, Parts One and Two: The Official Playscript of the Original West End Production : The Official Script Book of the Original West End Production",
+      "name": "Harry Potter and the Cursed Child, Parts One and Two",
       "description": "A magical journey through the adventures of Harry Potter.",
       "author": "J. K. Rowling , Jack Thorne , John Tiffanys",
       "category": "Fiction , Fantasy , Harry Potter , Adventure , Science Fiction",
@@ -613,7 +613,7 @@
     {
       "id": "62",
       "name": "Ghost Stories",
-      "description": "A compilation of eerie tales that will send shivers down your spine, capturing the spirit of Victorian ghost stories.",
+      "description": "A compilation of eerie tales that will send shivers down your spine",
       "author": "Charles Dickens",
       "category": "Fiction , Classics , Collector's Library , Halloween month",
       "price": 62,
@@ -623,7 +623,7 @@
     {
       "id": "63",
       "name": "The Adventures of Huckleberry Finn",
-      "description": "Huck Finn's unforgettable journey on the Mississippi River with his friend Jim, exploring themes of freedom and friendship.",
+      "description": "Huck Finn's unforgettable journey on the Mississippi River with his friend Jim.",
       "author": "Mark Twain",
       "category": "Fiction , Classics , Collector's Library",
       "price": 45,
@@ -633,7 +633,7 @@
     {
       "id": "64",
       "name": "Hard Times",
-      "description": "A powerful critique of industrial society, where Dickens paints a portrait of human struggles amidst a cold, utilitarian world.",
+      "description": "A powerful critique of industrial society",
       "author": "Charles Dickens",
       "category": "Fiction , Classics , Collector's Library",
       "price": 55,
@@ -643,7 +643,7 @@
     {
       "id": "65",
       "name": "Dubliners",
-      "description": "Joyce's vivid portrayal of life in Dublin, capturing the poignant moments of everyday life and its silent struggles.",
+      "description": "Joyce's vivid portrayal of life in Dublin.",
       "author": "James Joyce",
       "category": "Fiction , Classics , Collector's Library , Fall in love with books",
       "price": 50,
@@ -653,7 +653,7 @@
     {
       "id": "66",
       "name": "Twelfth Night",
-      "description": "A comedy of mistaken identities, love, and revelry, Shakespeare's witty exploration of romance and mischief.",
+      "description": "A comedy of mistaken identities, love, and revelry.",
       "author": "Sir Arthur Conan Doyle",
       "category": "Fiction , Sherlock Holmes , Classics",
       "price": 43,
@@ -663,7 +663,7 @@
     {
       "id": "67",
       "name": "Treasure Island",
-      "description": "Set sail with Jim Hawkins and the legendary Long John Silver in this thrilling adventure of pirates and hidden treasure.",
+      "description": "Set sail with Jim Hawkins.",
       "author": "Robert Louis Stevenson",
       "category": "Fiction , Classics , Collector's Library , Film tie-in",
       "price": 67,
@@ -673,7 +673,7 @@
     {
       "id": "68",
       "name": "Walden",
-      "description": "Thoreau's masterpiece of transcendental philosophy, urging readers to live simply and harmoniously with nature.",
+      "description": "Thoreau's masterpiece of transcendental philosophy.",
       "author": "Henry David Thoreau",
       "category": "Fiction , Classics , Collector's Library",
       "price": 42,
@@ -683,7 +683,7 @@
     {
       "id": "69",
       "name": "The Machine Gunners",
-      "description": "A gripping World War II story of resilience, bravery, and the horrors of war, seen through the eyes of a young boy.",
+      "description": "A gripping World War II story of resilience.",
       "author": "Robert Westall",
       "category": "Fiction , Classics , Collector's Library",
       "price": 54,
@@ -693,7 +693,7 @@
     {
       "id": "70",
       "name": "Hamlet : Prince of Denmark",
-      "description": "Shakespeare's tragic tale of revenge, madness, and moral dilemmas, as Prince Hamlet grapples with his fate.",
+      "description": "Shakespeare's tragic tale of revenge, madness.",
       "author": "William Shakespeare",
       "category": "Fiction , Classics , Collector's Library , Shakespeare in April",
       "price": 38,
@@ -703,7 +703,7 @@
     {
       "id": "71",
       "name": "The Master and Margarita",
-      "description": "Bulgakov's surreal and satirical tale blending the story of the Devil's visit to Soviet Russia with a retelling of the trial of Jesus.",
+      "description": "Bulgakov's surreal and satirical.",
       "author": "Mikhail Bulgakov",
       "category": "Fiction , Classics , Collector's Library",
       "price": 61,
@@ -725,7 +725,7 @@
       "name": "Persuasion",
       "description": "A poignant love story by Jane Austen,",
       "author": "Jane Austen",
-      "category": "Fiction , Classics , Collector's Library , Beautiful gift books , Film tie-in , Empowering women around the world",
+      "category": "Fiction , Classics , Collector's Library.",
       "price": 56,
       "image": "../src/assets/book-73.jpg",
       "quantity": 0
@@ -1075,7 +1075,7 @@
       "name": "Six Thinking Hats",
       "description": "Shakespeare's enchanting comedy where magic, love",
       "author": "Edward De Bono",
-      "category": "Non-Fiction , Health & Lifestyle , Summer Reads , Assertiveness, motivation & self-esteem , Read In The City , Health & Lifestyle",
+      "category": "Non-Fiction , Health & Lifestyle , Summer Reads , Assertiveness.",
       "price": 51,
       "image": "../src/assets/book-106.jpg",
       "quantity": 0
@@ -1095,7 +1095,7 @@
       "name": "Six Thinking Hats",
       "description": "Shakespeare's enchanting comedy where magic, love",
       "author": "Edward De Bono",
-      "category": "Non-Fiction , Health & Lifestyle , Summer Reads , Assertiveness, motivation & self-esteem , Read In The City , Health & Lifestyle",
+      "category": "Non-Fiction , Health & Lifestyle , Summer Reads , Assertiveness.",
       "price": 55.5,
       "image": "../src/assets/book-108.jpg",
       "quantity": 0
@@ -1835,7 +1835,7 @@
       "name": "SCRABBLE (TM) Junior Spelling Activity Book Age 7-8",
       "description": "Alexander Chernev , Philip Kotler",
       "author": "Collins Scrabble",
-      "category": "Children's , 5 to 8",
+      "category": "Children's , 5-8",
       "price": 29.5,
       "image": "../src/assets/book-181.jpg",
       "quantity": 0
@@ -1845,7 +1845,7 @@
       "name": "SCRABBLE (TM) Junior Spelling Activity Book Age 8-9",
       "description": "Alexander Chernev , Philip Kotler",
       "author": "Collins Scrabble",
-      "category": "Children's , 5 to 8 , 9 to 12",
+      "category": "Children's , 5-8 , 9-12",
       "price": 29.5,
       "image": "../src/assets/book-182.jpg",
       "quantity": 0
@@ -1855,7 +1855,7 @@
       "name": "YOU CAN upcycle and craft : Be Amazing with This Inspiring Guide",
       "description": "Alexander Chernev , Philip Kotler",
       "author": "Collins Kids , Wastebuster",
-      "category": "Children's , 5 to 8",
+      "category": "Children's , 5-8",
       "price": 29.5,
       "image": "../src/assets/book-183.jpg",
       "quantity": 0
@@ -1865,7 +1865,7 @@
       "name": "YOU CAN save the planet : Be Amazing with This Inspiring Guide",
       "description": "Alexander Chernev , Philip Kotler",
       "author": "Collins Kids , Annabelle Padwick",
-      "category": "Children's , 5 to 8",
+      "category": "Children's , 5-8",
       "price": 29.5,
       "image": "../src/assets/book-184.jpg",
       "quantity": 0
@@ -1875,7 +1875,7 @@
       "name": "YOU CAN take amazing photos : Be Amazing with This Inspiring Guide",
       "description": "Alexander Chernev , Philip Kotler",
       "author": "Collins Kids , Lillian Spibey",
-      "category": "Children's , 5 to 8",
+      "category": "Children's , 5-8",
       "price": 29.5,
       "image": "../src/assets/book-185.jpg",
       "quantity": 0
@@ -1885,19 +1885,9 @@
       "name": "YOU CAN grow your own food : Be Amazing with This Inspiring Guide",
       "description": "Alexander Chernev , Philip Kotler",
       "author": "Collins Kids , Annabelle Padwick",
-      "category": "Children's , 5 to 8",
+      "category": "Children's , 5-8",
       "price": 29.5,
       "image": "../src/assets/book-186.jpg",
-      "quantity": 0
-    },
-    {
-      "id": "187",
-      "name": "SCRABBLE (TM) Junior Spelling Activity Book Age 8-9",
-      "description": "Alexander Chernev , Philip Kotler",
-      "author": "Collins Scrabble",
-      "category": "Children's , 5 to 8 , 9 to 12",
-      "price": 32.5,
-      "image": "../src/assets/book-187.jpg",
       "quantity": 0
     },
     {
@@ -1905,7 +1895,7 @@
       "name": "YOU CAN cook tasty food : Be Amazing with This Inspiring Guide",
       "description": "Alexander Chernev , Philip Kotler",
       "author": "Collins Kids , Helen Burgess ",
-      "category": "Children's , 9 to 12",
+      "category": "Children's , 9-12",
       "price": 29.5,
       "image": "../src/assets/book-188.jpg",
       "quantity": 0
@@ -1915,7 +1905,7 @@
       "name": "Little Inventors Go Green! : Inventing for a Better Planet",
       "description": "Alexander Chernev , Philip Kotler",
       "author": "Dominic Wilcox , Katherine Mengardon",
-      "category": "Children's , 9 to 12",
+      "category": "Children's , 9-12",
       "price": 33.5,
       "image": "../src/assets/book-189.jpg",
       "quantity": 0
@@ -1945,7 +1935,7 @@
       "name": "The Strange Case of Dr Jekyll and MR Hyde & the Suicide Club",
       "description": "Alexander Chernev , Philip Kotler",
       "author": "Robert Louis Stevenson",
-      "category": "Children's , 9 to 12",
+      "category": "Children's , 9-12",
       "price": 29.5,
       "image": "../src/assets/book-192.jpg",
       "quantity": 0
@@ -1955,7 +1945,7 @@
       "name": "Around the World in Eighty Days (Puffin Classics)",
       "description": "Alexander Chernev , Philip Kotler",
       "author": "Jules Verne",
-      "category": "Children's , 9 to 12",
+      "category": "Children's , 9-12",
       "price": 29.5,
       "image": "../src/assets/book-193.jpg",
       "quantity": 0
@@ -1965,7 +1955,7 @@
       "name": "A Tale of Two Cities",
       "description": "Alexander Chernev , Philip Kotler",
       "author": "Charles Dickens",
-      "category": "Children's , 9 to 12",
+      "category": "Children's , 9-12",
       "price": 30.5,
       "image": "../src/assets/book-194.jpg",
       "quantity": 0
@@ -2028,16 +2018,6 @@
       "category": "Children's , Baby & Toddler",
       "price": 30.5,
       "image": "../src/assets/book-200.jpg",
-      "quantity": 0
-    },
-    {
-      "id": "0.7077156243198304",
-      "name": "nika",
-      "description": "sadasd",
-      "author": "nikola",
-      "category": "sadasd",
-      "price": "6",
-      "image": "../src/assets/book-3.jpg",
       "quantity": 0
     }
   ]

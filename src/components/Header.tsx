@@ -3,19 +3,23 @@ import SearchBar from "./SearchBar";
 import BasketIcon from "./BasketIcon";
 
 interface HeaderProps {
-  basketCount: number;
+  getTotalQuantity: number;
   bookData: TBooks;
   setFilteredBooks: React.Dispatch<React.SetStateAction<TBooks>>;
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
   setNoResults: React.Dispatch<React.SetStateAction<boolean>>;
+  setMinValue: React.Dispatch<React.SetStateAction<number>>;
+  setMaxValue: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const Header: React.FC<HeaderProps> = ({
-  basketCount,
+  getTotalQuantity,
   bookData,
   setFilteredBooks,
   setCurrentPage,
   setNoResults,
+  setMinValue,
+  setMaxValue,
 }) => {
   const navigate = useNavigate();
 
@@ -25,6 +29,8 @@ const Header: React.FC<HeaderProps> = ({
     setCurrentPage(1); // პირველი გვერდზე დაბრუნება
     navigate("/"); // მთავარ გვერდზე დაბრუნება
     setNoResults(false);
+    setMinValue(0);
+    setMaxValue(200);
   };
   return (
     <>
@@ -44,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({
         />
 
         {/* BasketIcon Component */}
-        <BasketIcon basketCount={basketCount} />
+        <BasketIcon getTotalQuantity={getTotalQuantity} />
       </header>
     </>
   );

@@ -10,15 +10,17 @@ export default function BasketPage({
   basket: TBooks;
   removeFromBasket: (id: number) => void;
   handleQuantityChange: (bookId: number) => void;
-  addToBasket: (book: number, increase: boolean) => void;
   setQuantity: React.Dispatch<React.SetStateAction<number | string>>;
 }) {
+  // ეს ფუნქცია ითვლის ჯამურ ფასს
   const calculateTotal = () => {
     return basket.reduce(
       (total, item) => total + item.price * item.quantity,
       0
     );
   };
+
+  // ეს ფუნქცია ითვლის თითოეული წიგნის ჯამურ ფასს
   const calculateEachBook = (bookId: number) => {
     return basket
       .filter((item) => item.id === bookId)
@@ -43,11 +45,14 @@ export default function BasketPage({
 
                 <div className="flex-row md:flex md:justify-between md:items-center">
                   <div className="flex sm:w-[300px]">
-                    <img
-                      src={book.image}
-                      alt="BookImg"
-                      className="w-[85px] mr-3"
-                    />
+                    <Link to={`/book/${book.id}`}>
+                      <img
+                        src={book.image}
+                        alt="BookImg"
+                        className="w-[85px] mr-3"
+                      />
+                    </Link>
+
                     <div>
                       <Link to={`/book/${book.id}`}>
                         <div className="group">
@@ -72,7 +77,7 @@ export default function BasketPage({
                         <QuantityInput
                           book={book}
                           handleQuantityChange={handleQuantityChange}
-                          setItems={setQuantity}
+                          setQuantity={setQuantity}
                         />
                       </div>
                       <div className="mx-auto">
